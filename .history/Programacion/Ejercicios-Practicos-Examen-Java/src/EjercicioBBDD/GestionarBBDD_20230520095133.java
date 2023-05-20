@@ -1,12 +1,15 @@
 package EjercicioBBDD;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import EjercicioBBDD.Data.SQLClassEjercicio;
 
 public class GestionarBBDD {
-    final String URL = "jdbc:mysql://localhost:3306/empresaDB";
+    final String URL = "jdbc:mysql://localhost:5432/empresaDB";
     private Connection conexion = null;
     private ResultSet rs = null;
     ArrayList<Empleado> listaEmpleados = new ArrayList<>();
@@ -149,30 +152,23 @@ public class GestionarBBDD {
             final String SQL = "SELECT * FROM empleados";
             Statement statement = conexion.createStatement();
             rs = statement.executeQuery(SQL);
-    
+
             while (rs.next()) {
                 int idUsuario = rs.getInt("idUsuario");
                 String nombre = rs.getString("nombre");
                 String apellidos = rs.getString("apellidos");
                 int salario = rs.getInt("salario");
-    
+
                 Empleado empleado = new Empleado(idUsuario, nombre, apellidos, salario);
                 listaEmpleados.add(empleado);
             }
         } catch (SQLException e) {
             System.out.println("Error al obtener los empleados: " + e.getMessage());
         } finally {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            // Cerrar los recursos (ResultSet, Statement, Connection)
         }
-        
-    
+
         return listaEmpleados;
-        
     }
-    
 
 }

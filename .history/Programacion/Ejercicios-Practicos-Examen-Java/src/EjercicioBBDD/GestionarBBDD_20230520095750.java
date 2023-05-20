@@ -6,7 +6,7 @@ import java.util.*;
 import EjercicioBBDD.Data.SQLClassEjercicio;
 
 public class GestionarBBDD {
-    final String URL = "jdbc:mysql://localhost:3306/empresaDB";
+    final String URL = "jdbc:mysql://localhost:5432/empresaDB";
     private Connection conexion = null;
     private ResultSet rs = null;
     ArrayList<Empleado> listaEmpleados = new ArrayList<>();
@@ -164,6 +164,7 @@ public class GestionarBBDD {
         } finally {
             try {
                 rs.close();
+                statement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
