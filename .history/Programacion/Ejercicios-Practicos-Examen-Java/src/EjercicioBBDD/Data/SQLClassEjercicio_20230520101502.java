@@ -15,5 +15,5 @@ package EjercicioBBDD.Data;
 public class SQLClassEjercicio {
 	public static String SQL_INSERT = "insert into empleados (id, nombre, apellidos, salario) values (?,?,?,?)";
 	public static String SQL_GETALL = "select * from empleados";
-	public static String SQL_DELETE = "delete from empleados where id=?";
+	public static String SQL_DELETE = "delete from empleados where empleadoid=?";
 }

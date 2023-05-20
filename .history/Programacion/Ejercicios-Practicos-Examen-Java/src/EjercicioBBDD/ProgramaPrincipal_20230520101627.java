@@ -18,6 +18,7 @@ public class ProgramaPrincipal {
         // Mostraremos todos los registros de la tabla
         System.out.println("=============================");
         System.out.println("1. Registros de la tabla");
+        System.out.println("=============================");
 
         ArrayList<Empleado> listaEmpleados = db.getAllEmpleados();
 
@@ -34,6 +35,7 @@ public class ProgramaPrincipal {
         // Insertamos los registros en la BBDD
         System.out.println("=============================");
         System.out.println("2. Insertamos los registros en la BBDD");
+        System.out.println("=============================");
 
         resultado = db.insertarEmpleado(empleado1);
         resultado += db.insertarEmpleado(empleado2);
@@ -49,6 +51,7 @@ public class ProgramaPrincipal {
         // Mostramos todos los registros
         System.out.println("=============================");
         System.out.println("3. Mostramos todos los registros");
+        System.out.println("=============================");
 
         listaEmpleados = db.getAllEmpleados();
         if (listaEmpleados.size() != 0) {
@@ -63,6 +66,7 @@ public class ProgramaPrincipal {
         // Borrar registros de la tabla
         System.out.println("=============================");
         System.out.println("4. Borrar registros de la tabla");
+        System.out.println("=============================");
 
         boolean borrar = db.deleteEmpleado(empleado3);
 
@@ -76,6 +80,7 @@ public class ProgramaPrincipal {
         // Mostramos todos los registros
         System.out.println("=============================");
         System.out.println("5. Mostramos todos los registros post borrados");
+        System.out.println("=============================");
 
         listaEmpleados = db.getAllEmpleados();
         if (listaEmpleados.size() != 0) {

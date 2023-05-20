@@ -18,7 +18,7 @@ public class GestionarBBDD {
      * @param emp objeto Empleado que se elimina de la BBDD
      * @return true si el borrado fue correcto, false sino.
      */
-    public boolean deleteEmpleado(Empleado empleado1) {
+    public Boolean deleteEmpleado(Empleado empleado1) {
         PreparedStatement ps = null;
         int numFilas;
         try {
@@ -28,29 +28,25 @@ public class GestionarBBDD {
                 numFilas = ps.executeUpdate();
             } else {
                 this.connectToDB();
-                ps = this.conexion.prepareStatement(SQLClassEjercicio.SQL_DELETE);
+                ps = this.conexion.prepareStatement(SQLClassEjercicio.SQL_INSERT);
                 ps.setInt(1, empleado1.getId());
                 numFilas = ps.executeUpdate();
                 if (numFilas == 0) {
                     return false;
                 }
             }
-            return numFilas > 0; // Devolver true si se eliminaron filas
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
         } finally {
             try {
-                if (ps != null) {
-                    ps.close();
-                }
+                ps.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+        return false;
     }
-    
-    
 
     /**
      * A partir de un objeto empleado, inserta todos sus datos en la tabla

@@ -9,7 +9,7 @@ USE empresaDB;
 -- Creación de la tabla empleados
 CREATE TABLE
     empleados (
-        id INTEGER PRIMARY KEY AUTO_INCREMENT,
+        empleadoid INTEGER PRIMARY KEY AUTO_INCREMENT,
         nombre VARCHAR(50) NULL,
         apellidos VARCHAR(50) NULL,
         salario INTEGER NULL
