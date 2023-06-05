@@ -1,5 +1,8 @@
 package SegundaConvocatoriaEjercicios.UF4;
 
+/**
+ * Clase principal que contiene el programa principal para realizar pruebas con la gestión de aviones.
+ */
 public class UF4_1ProgramaPrincipal {
     /*
      * Ejercicio propuesto 1: Reparaciones de aviones
@@ -18,6 +21,12 @@ public class UF4_1ProgramaPrincipal {
      * 
      * Crea un pequeño programa para realizar las pruebas correspondientes creando
      * dos aviones y mostrando toda su información en la consola.
+     */
+
+    /**
+     * Método principal que se ejecuta al iniciar el programa.
+     * 
+     * @param args los argumentos de la línea de comandos (no se utilizan en este programa)
      */
     public static void main(String[] args) {
         Avion avion1 = new Avion("Avion 1", 40, 2000, "12-02-2023", "Pepe lorenzo");
